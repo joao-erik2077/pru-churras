@@ -46,8 +46,10 @@
 <ion-footer>
   <ion-toolbar>
     <p>PARTIDAS</p>
-    <p>TIME 1: {{ wins.teamOne }}</p>
-    <p>TIME 2: {{ wins.teamTwo }}</p>
+    <div>
+      <ion-chip>TIME 1: {{ wins.teamOne }}</ion-chip>
+      <ion-chip>TIME 2: {{ wins.teamTwo }}</ion-chip>
+    </div>
     <ion-button (click)="clear()" color="danger" size="full">LIMPAR TUDO</ion-button>
   </ion-toolbar>
 </ion-footer>

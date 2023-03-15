@@ -51,9 +51,21 @@ ion-footer {
   ion-toolbar {
     font-size: 2rem;
     font-weight: bold;
+    text-align: center;
+
+    div {
+      display: flex;
+      justify-content: space-around;
+      ion-chip {
+        padding: 15px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
 
     ion-button {
       font-size: 1rem;
+      font-weight: bold;
     }
   }
 }
