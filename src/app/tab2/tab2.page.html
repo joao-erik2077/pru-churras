@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar color="dark" mode="ios">
     <ion-title>
-      Truco
+      TRUCO FIGHTERS
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,11 +11,11 @@
   <div class="h">
     <p>VALENDO: {{ roundValue }}</p>
     <div>
-      <ion-button (click)="changeRoundValue(1)" color="dark">1</ion-button>
-      <ion-button (click)="changeRoundValue(3)" color="dark">3</ion-button>
-      <ion-button (click)="changeRoundValue(6)" color="dark">6</ion-button>
-      <ion-button (click)="changeRoundValue(9)" color="dark">9</ion-button>
-      <ion-button (click)="changeRoundValue(12)" color="dark">12</ion-button>
+      <ion-button (click)="changeRoundValue(1)" color="dark" shape="round" fill="{{ btFill1 }}">1</ion-button>
+      <ion-button (click)="changeRoundValue(3)" color="dark" shape="round" fill="{{ btFill3 }}">3</ion-button>
+      <ion-button (click)="changeRoundValue(6)" color="dark" shape="round" fill="{{ btFill6 }}">6</ion-button>
+      <ion-button (click)="changeRoundValue(9)" color="dark" shape="round" fill="{{ btFill9 }}">9</ion-button>
+      <ion-button (click)="changeRoundValue(12)" color="dark" shape="round" fill="{{ btFill12 }}">12</ion-button>
     </div>
   </div>
 
@@ -24,32 +24,39 @@
       <ion-col>
         <p>TIME 1</p>
         <div>
-          <ion-button (click)="addPointTo(1)" color="dark">+</ion-button>
+          <ion-button (click)="addPointTo(1)" color="primary" shape="round" fill="outline">+</ion-button>
           <p>{{ points.teamOne }}</p>
-          <ion-button (click)="removePointFrom(1)" color="dark">-</ion-button>
+          <ion-button (click)="removePointFrom(1)" color="primary" shape="round" fill="outline">-</ion-button>
         </div>
       </ion-col>
 
       <ion-col>
         <p>TIME 2</p>
         <div>
-          <ion-button (click)="addPointTo(2)" color="dark">+</ion-button>
+          <ion-button (click)="addPointTo(2)" color="primary" shape="round" fill="outline">+</ion-button>
           <p>{{ points.teamTwo }}</p>
-          <ion-button (click)="removePointFrom(2)" color="dark">-</ion-button>
+          <ion-button (click)="removePointFrom(2)" color="primary" shape="round" fill="outline">-</ion-button>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
 
+  <div class="truco">
+    <ion-button color="danger" (click)="trucar()" shape="round">TRUCO</ion-button>
+  </div>
+
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <p>PARTIDAS</p>
-    <div>
-      <ion-chip>TIME 1: {{ wins.teamOne }}</ion-chip>
-      <ion-chip>TIME 2: {{ wins.teamTwo }}</ion-chip>
+    <div class="tct">
+      <p>PARTIDAS</p>
+      <div>
+        <ion-chip>TIME 1: {{ wins.teamOne }}</ion-chip>
+        <ion-chip>TIME 2: {{ wins.teamTwo }}</ion-chip>
+      </div>
+
+      <ion-button (click)="clear()" color="danger" size="full">LIMPAR TUDO</ion-button>
     </div>
-    <ion-button (click)="clear()" color="danger" size="full">LIMPAR TUDO</ion-button>
   </ion-toolbar>
 </ion-footer>
