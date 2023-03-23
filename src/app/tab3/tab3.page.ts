@@ -40,7 +40,7 @@ export class Tab3Page {
   async showResults() {
     const alert = await this.alertController.create({
       header: 'Resultado',
-      message: `Resultado: ${this.result}`,
+      message: `${this.result}`,
       buttons: ['OK'],
     });
 
