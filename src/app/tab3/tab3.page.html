@@ -1,11 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="secondary" mode="ios">
     <ion-title>
-      Tab 3
+      DADO
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Defina o tamanho do dado</ion-label>
+    <ion-input type="number" [(ngModel)]="diceValue"></ion-input>
+  </ion-item>
+
+  <img [src]="actualImage">
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Tamanho atual: <span class="value">{{ diceValue }}</span></ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="previousResults.length > 0">
+    <ion-card-header>
+      <ion-card-title>
+        Resultados Anteriores:
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p *ngFor="let r of previousResults">d{{ r.diceValue }}: {{ r.result }}</p>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
+
+<ion-footer>
+  <ion-button size="full" color="secondary" (click)="rollDice()">Jogar o dado</ion-button>
+</ion-footer>

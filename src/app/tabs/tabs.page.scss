@@ -1,1 +1,14 @@
 
+ion-tab-bar {
+  ion-tab-button.tab-selected {
+    .ic1 {
+      color: var(--ion-color-warning);
+    }
+    .ic2 {
+      color: var(--ion-color-danger);
+    }
+    .ic3 {
+      color: var(--ion-color-secondary);
+    }
+  }
+}
